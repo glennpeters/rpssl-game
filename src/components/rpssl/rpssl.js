@@ -48,68 +48,81 @@ class RPSSL extends React.Component {
         });
   }
 
+  getChoiceName(status, id) {
+    let name = '';
+    let index = id - 1;
+
+    try {
+        name = status.choices[index].name;
+    } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log(error);
+    }
+
+    return name;
+  }
+
   displayGameStatus(status) {
-    let gameStatus;
+    let gameStatus = null;
+    let header = '';
+    let playerChoiceStr = '';
+    let computerChoiceStr = '';
+    
+    try {
+        playerChoiceStr = this.getChoiceName(status, status.player);
+        computerChoiceStr = this.getChoiceName(status, status.computer);
 
-    switch (status) {
-        case HUMAN: {
-            gameStatus = (
-                <GameStatus>
-                    You win!  Yay!
-                </GameStatus>
-            )
-           
-            break;
+        switch (status.results) {
+            case HUMAN: {
+                header = 'You win!  Yay!';
+                break;
+            }
+            case COMPUTER: {
+                header = 'The computer wins.';
+                break;
+            }
+            case DRAW: {
+                header = 'It\'s a tie!';
+                break;
+            }
         }
-        case COMPUTER: {
+    
+        if (header) {
             gameStatus = (
-                <GameStatus>
-                    The computer wins.
-                </GameStatus>
-            )
-            
-            break;
-        }
-        case DRAW: {
-            gameStatus = (
-                <GameStatus>
-                    Drat!  It&rsquo;s a draw.
-                </GameStatus>
-            )
+                <GameStatus className="slit-in-vertical">
+                    <p>
+                        You picked <strong>{playerChoiceStr}</strong>.  
+                    </p>
+                    <p>
+                        The computer picked <strong>{computerChoiceStr}</strong>.
+                    </p>
 
-            break;
+                    <h2>{header}</h2>
+                </GameStatus>
+            );
         }
-        default: {
-            gameStatus = null;
-
-            break;
-        }
+    } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log(error);
     }
 
     return gameStatus;
   }
 
   postPlay(id) {
-    console.log('postPlay() :: User clicked [curry]: ', id);
-
-    // Get available choices
+    // Post the player's choice and process response
     api.post(paths.PLAY, { player: id })
         .then(function(response) {
             let data = getData(response);
             // handle success
-            // eslint-disable-next-line
+            // eslint-disable-next-line no-console
             console.log(response);
-
-            // {
-            //     "results": string [12] (win, lose, tie),
-            //     “player”: choice_id,
-            //     “computer”:  choice_id
-            // }
             // TODO: More Error checking
-            if (data.results && data.computer) {
+            if (data.results && data.computer && data.player) {
                 this.setState({
                     results: data.results,
-                    computer: data.computer,
+                    computer: parseInt(data.computer),
+                    player: parseInt(data.player),
                 });
             } else {
                 throw('Unexpected server response on play request.')
@@ -117,7 +130,7 @@ class RPSSL extends React.Component {
         }.bind(this))
         .catch(function(error) {
             // handle error
-            // eslint-disable-next-line
+            // eslint-disable-next-line no-console
             console.log(error);
         })
         .finally(function() {
@@ -127,9 +140,41 @@ class RPSSL extends React.Component {
 
   setPlayChoice(id) {
     return (() => {
-      console.log('playChoice() :: User clicked [curry]: ', id);
       this.postPlay(id);
     }).bind(this);
+  }
+
+  choiceButtons(state) {
+    let buttons = null;
+    let groupState = {};
+
+    try {
+        if (state.player) {
+            // TODO: Animation not working
+            groupState = 'slit-in-vertical';
+        }
+
+        if (!state.results) {
+            buttons = (
+                <div className={groupState}>
+                    {state.choices.map(choice => {
+                        return (
+                        <GameButton
+                            key={choice.id}
+                            name={choice.name}
+                            playChoice={this.setPlayChoice(choice.id)}
+                        />
+                        );
+                    })}
+                </div>
+            );
+        }
+    } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log(error);
+    }
+
+    return buttons;
   }
 
   componentDidMount() {
@@ -137,21 +182,12 @@ class RPSSL extends React.Component {
   }
 
   render() {
-
     return (
       <>
-        {this.displayGameStatus(this.state.results)}
-
         <Container>
-          {this.state.choices.map(choice => {
-            return (
-              <GameButton
-                key={choice.id}
-                name={choice.name}
-                playChoice={this.setPlayChoice(choice.id)}
-              />
-            );
-          })}
+            {this.displayGameStatus(this.state)}
+
+            {this.choiceButtons(this.state)}
         </Container>
       </>
     );

@@ -4,6 +4,11 @@ Using the Gatsby Universal starter pack [on GitHub](https://github.com/fabe/gats
 
 Star Trek color palette: https://www.color-hex.com/color-palette/6450
 
+Animation Styles borrowed and adapted from Animista
+http://animista.net/play/entrances/roll-in-blurred
+
+Maybe:
+https://wiki.starbase118.net/wiki/index.php?title=File:IDIC.png
 
 # Instructions
 
@@ -19,6 +24,7 @@ Here are the [rules](http://www.samkass.com/theories/RPSSL.html) to “Rock Pape
  * Clean up unused modules
  * Nice to have: Starfield, parallax buttons
  * Nice to have: Design, responsive
+ * Nice to have: Flavor win text
 
 # Bonus
 <ul>
