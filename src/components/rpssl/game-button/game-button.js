@@ -8,7 +8,7 @@ const GameButton = ({ name, playChoice }) => (
 
 GameButton.propTypes = {
   name: PropTypes.string,
-  playChoice: PropTypes.function,
+  playChoice: PropTypes.func,
 };
 
 export default GameButton;
