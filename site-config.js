@@ -4,7 +4,7 @@ module.exports = {
   siteTitle: `Rock Paper Spock Scissors Lizard`,
   siteTitleShort: `RPSSL`,
   siteDescription: `A simple implementation of the slight unsimple game Rock Paper Spock Scissors Lizard.`,
-  siteUrl: `https://example.com`,
+  siteUrl: `https://glennbpeters.com/`,
   themeColor: `#000`,
   backgroundColor: `#fff`,
   pathPrefix: null,

@@ -2,6 +2,9 @@ import { createGlobalStyle } from 'styled-components';
 import { accent } from 'constants/theme';
 
 export default createGlobalStyle`
+
+  @import url('https://fonts.googleapis.com/css?family=Rambla|Righteous&display=swap');
+
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -34,11 +37,11 @@ export default createGlobalStyle`
   }
 
   body {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-family: Rambla,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     line-height: 1;
     font-size: 1.6rem;
     color: #000;
-    background-color: #fff;
+    background-color: #0099f6;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -84,11 +87,39 @@ export default createGlobalStyle`
     font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
   }
 
-  video {
-    max-width: 100%;
-  }
-
   p {
     margin-bottom: 2rem;
   }
+
+  // RPSSL (GBP)
+  
+  .about {
+    line-height: 1.6;
+  }
+
+  .about h1 {
+  .about h2 {
+    // font-family: 'Righteous', san-serif;
+    font-weight: 400;
+    letter-spacing: 0.9em;
+    font-size: 120%;
+    margin: 1em 0 0.2em;
+  }
+
+  .about h2 {
+    font-size: 110%;
+  }
+
+  .about a:link {
+    color: #f2c300;
+  }
+
 `;
+
+// Star Trek color palette
+// https://www.color-hex.com/color-palette/6450
+// Red: #df0000	(223,0,0)
+// Gold: #f2c300	(242,195,0)
+// Blue: #0099f6	(0,153,246)
+// Green: #00b844	(0,184,68)
+// Black: #000000	(0,0,0)

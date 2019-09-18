@@ -1,1 +1,1 @@
-Rock Paper Spock Scissors Lizard: The Game!
+Rock Paper Spock Scissors Lizard
