@@ -98,6 +98,8 @@ class RPSSL extends React.Component {
                     </p>
 
                     <h2>{header}</h2>
+
+                    <button onClick={this.initGame.bind(this)}>Play Again</button>
                 </GameStatus>
             );
         }

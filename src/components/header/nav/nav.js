@@ -9,6 +9,9 @@ const Nav = () => (
         <Link to="/about">About</Link>
       </li>
       <li>
+        <Link to="/scores">Scoreboard</Link>
+      </li>
+      <li>
         <a
           href="http://www.samkass.com/theories/RPSSL.html"
           rel="noopener noreferrer"

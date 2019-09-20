@@ -90,30 +90,6 @@ export default createGlobalStyle`
   p {
     margin-bottom: 2rem;
   }
-
-  // RPSSL (GBP)
-  
-  .about {
-    line-height: 1.6;
-  }
-
-  .about h1 {
-  .about h2 {
-    // font-family: 'Righteous', san-serif;
-    font-weight: 400;
-    letter-spacing: 0.9em;
-    font-size: 120%;
-    margin: 1em 0 0.2em;
-  }
-
-  .about h2 {
-    font-size: 110%;
-  }
-
-  .about a:link {
-    color: #f2c300;
-  }
-
 `;
 
 // Star Trek color palette

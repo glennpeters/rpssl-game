@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import MEDIA from 'helpers/mediaTemplates';
 
 export const GameStatus = styled.div`
-  font-size: 4.8rem;
+  font-size: 3.8rem;
   margin: 2rem auto 1rem;
-  width: 60%;
+  width: 80%;
   max-width: 500px;
   margin: 4rem auto;
-  padding: 0.4em;
-  background-color: gold;
+  padding: 0.8em;
+  background-color: #f2c300;
   color: #000;
   box-shadow: 1px 1px 9px 2px rgba(0, 0, 0, 0.5);
 
@@ -26,6 +26,32 @@ export const GameStatus = styled.div`
   strong {
     font-weight: 600;
   }
+
+  button {
+    font-family: Rambla, sans-serif;
+    background-color: rgba(0, 184, 68, 1);
+    color: #fff;
+    border: none;
+    border-radius: 0.4em;
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.5);
+    font-size: 2rem;
+    padding: 0.5em 0.8em;
+    margin: 1.6em auto 0;
+    display: block;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: rgba(0, 164, 48, 1);
+  }
+
+  // Star Trek color palette
+  // https://www.color-hex.com/color-palette/6450
+  // Red: #df0000	(223,0,0)
+  // Gold: #f2c300	(242,195,0)
+  // Blue: #0099f6	(0,153,246)
+  // Green: #00b844	(0, 184, 68)
+  // Black: #000000	(0,0,0)
 
   &.slit-in-vertical {
     -webkit-animation: slit-in-vertical 0.45s ease-out both;
@@ -46,39 +72,39 @@ export const GameStatus = styled.div`
  */
   @-webkit-keyframes slit-in-vertical {
     0% {
-      -webkit-transform: translateZ(-800px) rotateY(90deg);
-      transform: translateZ(-800px) rotateY(90deg);
+      // -webkit-transform: translateZ(-800px) rotateY(90deg);
+      // transform: translateZ(-800px) rotateY(90deg);
       opacity: 0;
-      -webkit-filter: blur(60px);
+      -webkit-filter: blur(90px);
     }
     54% {
-      -webkit-transform: translateZ(-160px) rotateY(87deg);
-      transform: translateZ(-160px) rotateY(87deg);
+      // -webkit-transform: translateZ(-160px) rotateY(87deg);
+      // transform: translateZ(-160px) rotateY(87deg);
       opacity: 1;
-      -webkit-filter: blur(20px);
+      -webkit-filter: blur(70px);
     }
     100% {
-      -webkit-transform: translateZ(0) rotateY(0);
-      transform: translateZ(0) rotateY(0);
+      // -webkit-transform: translateZ(0) rotateY(0);
+      // transform: translateZ(0) rotateY(0);
       -webkit-filter: blur(0);
     }
   }
   @keyframes slit-in-vertical {
     0% {
-      -webkit-transform: translateZ(-800px) rotateY(90deg);
-      transform: translateZ(-800px) rotateY(90deg);
+      // -webkit-transform: translateZ(-800px) rotateY(90deg);
+      // transform: translateZ(-800px) rotateY(90deg);
       opacity: 0;
-      filter: blur(60px);
+      filter: blur(90px);
     }
     54% {
-      -webkit-transform: translateZ(-160px) rotateY(87deg);
-      transform: translateZ(-160px) rotateY(87deg);
+      // -webkit-transform: translateZ(-160px) rotateY(87deg);
+      // transform: translateZ(-160px) rotateY(87deg);
       opacity: 1;
-      filter: blur(20px);
+      filter: blur(70px);
     }
     100% {
-      -webkit-transform: translateZ(0) rotateY(0);
-      transform: translateZ(0) rotateY(0);
+      // -webkit-transform: translateZ(0) rotateY(0);
+      // transform: translateZ(0) rotateY(0);
       filter: blur(0);
     }
   }
