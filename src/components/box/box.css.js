@@ -7,7 +7,7 @@ export const Container = styled.div`
   // RPSSL (GBP)
 
   .about {
-    padding: 0.4em 0 1em;
+    padding: 0.4em 1.4em 2em;
     background-color: #f2c300
     line-height: 1.6;
   }
@@ -22,14 +22,48 @@ export const Container = styled.div`
 
   .about h2 {
     font-size: 120%;
+    margin-left: 1em;
+  }
+
+  .about h1.title {
+    font-size: 150%;
+    margin-bottom: 2em;
+  }
+
+  pre {
+    color: #333;
+    margin: 1em 1.2em 1.4em;
+    background: #000;
+    color: #fff;
+  }
+
+  h2 + pre {
+    margin-top: 0.2em;
+  }
+
+  ul {
+    list-style: circle;
+    line-height: 1.6;
+    padding-left: 2.6em;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  p {
+    margin-left: 1em;
+    margin-right: 1em;
   }
 
   .about a:link {
-    color: #00b844;
+    color: #0099f6;
   }
 
   .about a:visited {
-    color: #00b844;
+    color: #0099f6;
+  }
+
+  .about a:hover {
+    color: #0000FF;
   }
 
   .scoreBoard {

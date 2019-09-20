@@ -8,9 +8,9 @@ const Nav = () => (
       <li>
         <Link to="/about">About</Link>
       </li>
-      <li>
+      {/* <li>
         <Link to="/scores">Scoreboard</Link>
-      </li>
+      </li> */}
       <li>
         <a
           href="http://www.samkass.com/theories/RPSSL.html"

@@ -1,55 +1,43 @@
-# Using
+# About
 
-Using the Gatsby Universal starter pack [on GitHub](https://github.com/fabe/gatsby-universal).
+Rock Paper Scissors Spock Lizard is a game developed as code challenge to communicate with a server and display the results.  
 
-Star Trek color palette: https://www.color-hex.com/color-palette/6450
+A server was built using Node Express (see below), but not fully developed due to time.  A scoreboard was added but disabled, also due to time.  The plan was to save, retrieve and clear the scoreboard using Redux, but ultimately time ran out.
 
-Animation Styles borrowed and adapted from Animista
-http://animista.net/play/entrances/roll-in-blurred
-
-Maybe:
-https://wiki.starbase118.net/wiki/index.php?title=File:IDIC.png
-
-# Instructions
-
-# Rules
-Here are the [rules](http://www.samkass.com/theories/RPSSL.html) to “Rock Paper Scissors Spock Lizard”
+The game is available on [Github](https://github.com/glennpeters/rpssl-game).
 
 
-# Coding Sample Instructions
-[On Google Docs](https://docs.google.com/document/d/1xY2A2Rcq5tOnWUDYiPfEEIYOyrBYWPbqLnflyk6E2Ag/view#heading=h.mzegkw7ilz8l)
+## Instructions
+```
+> git clone https://github.com/glennpeters/rpssl-game
+> cd rpssl-game
+> npm install
+> gatsby develop
+```
+
+*Note*: This should be something like `gatsby build`, but there's an error with the default build missing a 404 page and there wasn't time to debug.
 
 
-# To Do
+## Used Resources
+
+ * Using the Gatsby Universal starter pack [on GitHub](https://github.com/fabe/gatsby-universal).
+ * Star Trek color palette: https://www.color-hex.com/color-palette/6450
+ * Animation Styles borrowed and adapted from [Animista](http://animista.net/play/entrances/roll-in-blurred)
+
+
+## To Do
+ * "Waiting for server" animation -- start on server request, close on the "finally" condition.
+ * Finish scoreboard using Redux
  * Clean up unused modules
  * Nice to have: Starfield, parallax buttons
  * Nice to have: Design, responsive
- * Nice to have: Flavor win text
+ * Nice to have: Flavor win text with adapted labels replacing server text ("Scissors cuts paper")
 
-# Bonus
-<ul>
-    <li>Do something fun or creative with the game!</li>
-    <li>A scoreboard with the 10 most recent results</li>
-    <li>Allow the scoreboard to be reset</li>
-    <li>Allow multiple users to play on the same service</li>
-</ul>
 
-```
-# Installation
-gatsby new my-site https://github.com/fabe/gatsby-universal
+## Server Side App (Dropped for Time)
 
-# To develop
-yarn develop
+The server side application is built using from Node Express, which was the best at handling CORS:
 
-# To build
-yarn build
+ * [expressjs.com](https://github.com/troygoode/node-cors-server/blob/master/server.js)
+ * [cors npm package](https://expressjs.com/en/resources/middleware/cors.html)
 
-# To test SSR (for Lighthouse etc.)
-yarn ssr
-
-# To format JS (precommit)
-yarn format
-
-# To generate favicons (included in `build`)
-yarn build:favicons
-```
