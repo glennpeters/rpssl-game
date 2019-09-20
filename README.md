@@ -15,6 +15,8 @@ The game is available on [Github](https://github.com/glennpeters/rpssl-game).
 > gatsby develop
 ```
 
+The server should now be available at `http://localhost:8000/` (If the port is busy, it will ask if you would like a different one.)
+
 *Note*: This should be something like `gatsby build` or `gatsby serve`, but there's an error with the default build missing a 404 page and there wasn't time to debug.
 
 
